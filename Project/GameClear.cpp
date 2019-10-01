@@ -2,8 +2,9 @@
 #include	"GameClear.h"
 
 //変更するシーン(外部参照、実体はGameApp.cpp)
-extern int						gChangeScene;
+extern int		gChangeScene;
 
+CFont			gFont2;
 /**
  * コンストラクタ
  *
@@ -39,6 +40,8 @@ bool CGameClear::Load(void) {
  */
 void CGameClear::Initialize(void) {
 	m_bEnd = false;
+
+	gFont2.Create(80, "");
 }
 
 /**
@@ -61,6 +64,7 @@ void CGameClear::Update(void) {
 void CGameClear::Render(void) {
 	m_BackImage.Render(0, 0);
 	CGraphicsUtilities::RenderString(10, 10, "ゲームクリア画面");
+	gFont2.RenderString(430, 100, "GameClear!");
 	CGraphicsUtilities::RenderString(520, 300, MOF_COLOR_WHITE, "Press Enter Key");
 }
 
@@ -79,4 +83,7 @@ void CGameClear::Release(void) {
 
 	//テクスチャの解放
 	m_BackImage.Release();
+
+	//フォントの解放
+	gFont2.Release();
 }
