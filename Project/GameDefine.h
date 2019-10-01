@@ -1,0 +1,14 @@
+#pragma once
+#include	"Mof.h"
+
+//ë∂ç›Ç∑ÇÈÉVÅ[ÉìÇÃóÒãì
+enum tag_SCENENO {
+	SCENENO_TITLE,
+	SCENENO_GAMESELECT,
+	SCENENO_GAME,
+	SCENENO_GAME2,
+	SCENENO_GAME3,
+	SCENENO_GAMECLEAR,
+	SCENENO_GAMEOVER,
+};
+
